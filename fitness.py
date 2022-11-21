@@ -6,11 +6,11 @@ VGS = [0.0, 0.5, 1.0, 1.5, 2.0, 2.5, 3.0, 3.5, 4.0, 4.5, 5.0]
 
 def res(m,n):
     rsheet=25
-    #Esquina sin considera
-    rt=m*n*rsheet
+    #Esquina sin considerar
+    # rt=m*n*rsheet
     
     #Considerando esquina
-    # rt=(m*n-1/3*(n**2+n*(n-3)))*rsheet
+    rt=(m*n-(n-1)/3)*rsheet
     return rt
 
 def curr(vgs,W,L):

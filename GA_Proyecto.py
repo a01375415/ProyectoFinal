@@ -63,7 +63,7 @@ def main():
         bestfit=max(fit)
         bestindex=fit.index(bestfit)
         bestvals=gray2real(pop[bestindex])
-        ratio=bestvals[2]/bestvals[3]
+        ratio=(bestvals[2]-1)/(2*bestvals[3]-1)
         
         while abs(ratio-1)>tolWL or abs(1/ratio-1)>tolWL:
             del fit[bestindex]
@@ -71,7 +71,7 @@ def main():
             bestfit=max(fit)
             bestindex=fit.index(bestfit)
             bestvals=gray2real(pop[bestindex])
-            ratio=bestvals[2]/bestvals[3]
+            ratio=(bestvals[2]-1)/(2*bestvals[3]-1)
         
         newpop.append(pop[bestindex])
         sol.append(gray2real(pop[bestindex]))
@@ -97,8 +97,9 @@ def main():
     print("L:\t",round(solution[1]*0.3,1),"\u03BCm")
     print("m:\t",solution[2])
     print("n:\t",solution[3])
-    print("R:\t",res(solution[2],solution[3])/1000,"k\u03A9")
+    print("R:\t",res(solution[2],solution[3]),"\u03A9")
     print("MSE: ",round(-bestfits_g[-1],6))
+    print("Forma del resistor:",(2*solution[3]-1)/(solution[2]-1))
     plt.figure(1)
     plt.plot(-1*np.array(bestfits_g))
     plt.show()

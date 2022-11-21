@@ -14,27 +14,19 @@ beta = 4.5e-6   #transistor's beta
 rsq = 25        #sheet resistance, ohms per square
 
 #transistor variables
-W = 8.1e-6        #gate width
-L = 15.6e-6        #gate length
+W = 65.4e-6        #gate width
+L = 4.8e-6        #gate length
 print('W: '+str(round(1e6*W,1))+'μm\t'+'L: '+str(round(1e6*L,1))+'μm')
 
 #resistor
-m = 63          #resistor squares per line
-n = 66          #resistor lines
-R = 103950          # R(rsq, m, n)
+m = 18          #resistor squares per line
+n = 9          #resistor lines
+R = 3983.3333333333335          # R(rsq, m, n)
 print("R:", R, 'Ω')
 
-#transistor's drain current I_D (for each V_GS value)
-#resistor voltage V_R = I_D * R
-# VR = []
-# for i in range(len(VGS)):
-#     if VGS[i] <= VT:
-#         ID = 0.0
-#     else:
-#         ID = 0.0
-#     VR.append(R*ID)
-
 VR=R*beta/2*W/L*(VGS-VT)**2*(1+0.01*VDS)
+VR[0]=0.0
+VR[0]=0.0
 # # mean square error
 MSE = (np.sum((VR-VR_data)**2))/len(VGS)
 

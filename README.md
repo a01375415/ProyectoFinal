@@ -1,4 +1,5 @@
 # ProyectoFinal
+### Se encuentran 9 archivos
 * El archivo "GA_Proyecto.py" es el código principal.
 * El archivo "newindiv.py" genera individuos de cierta longitud de bits.
 * El archivo "population.py" genera una "n" población de individuos.

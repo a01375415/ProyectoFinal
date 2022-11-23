@@ -10,7 +10,7 @@ def res(m,n):
     # rt=m*n*rsheet
     
     #Considerando esquina
-    rt=(m*n-(n-1)/3)*rsheet
+    rt=(m*n-2*(n-1)/3)*rsheet
     return rt
 
 def curr(vgs,W,L):
